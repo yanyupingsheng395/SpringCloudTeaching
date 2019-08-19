@@ -21,7 +21,7 @@
         </dependency>
         <!-- Ribbon相关 -->
 
-        <!--告诉eureka注册中心,我是消费者-->
+        <!--告诉eureka注册中心,我是生产者-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
