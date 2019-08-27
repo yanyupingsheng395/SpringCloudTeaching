@@ -14,8 +14,9 @@ import com.atguigu.springcloud.entities.Dept;
 public class DeptController_Consumer
 {
 
-	private static final String REST_URL_PREFIX = "http://localhost:8001";
-	//private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
+	//private static final String REST_URL_PREFIX = "http://localhost:8001";
+	private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
+				//microservicecloud-dept这个是8001在yml写的,注册到微服务中的名字
 
 
 	@Autowired
