@@ -18,13 +18,17 @@ public class ConfigBean //boot -->spring   applicationContext.xml --- @Configura
 		return new RestTemplate();
 	}
 	
-//	@Bean
-//	public IRule myRule()
-//	{
-//		//return new RoundRobinRule();
-//		//return new RandomRule();//达到的目的，用我们重新选择的随机算法替代默认的轮询。
-//		return new RetryRule();
-//	}
+	@Bean
+	public IRule myRule()
+	{
+		//return new RoundRobinRule();
+		//return new RandomRule();//达到的目的，用我们重新选择的随机算法替代默认的轮询。
+
+		//如果服务提供者都好的话,采用轮询算法,
+		// 如果一个宕机了,那么这个算法就会在获取失败后的一段指定时间内进行重试,
+		// 获取其他可用的服务,避开这个宕机的服务提供者
+		return new RetryRule();
+	}
 }
 
 //@Bean
