@@ -5,8 +5,15 @@ spring:
   application:
     name: microservicecloud-zuul-gateway
 
+#配置前:http://localhost:8001/dept/get/1
+#http://myzuul.com:9527/atguigu/mydept/dept/get/1
+#分解解释:http://myzuul.com:9527这个工程,zuul注入到注册中心中,就会接管所有的注册中心
+#/atguigu配置前置名字
+#/mydept  配置microservicecloud-dept这个服务就叫做/mydept
+#/dept/get/1   需要访问的方法
 zuul:
-  ignored-services: microservicecloud-dept
+  prefix: /atguigu
+  ignored-services: "*"
   routes:
     mydept.serviceId: microservicecloud-dept
     mydept.path: /mydept/**
